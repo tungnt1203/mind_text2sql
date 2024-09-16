@@ -1,0 +1,52 @@
+<div class="fixed top-0 left-0 h-screen w-16 hover:w-64 bg-white overflow-x-hidden transition-all duration-300 ease-in-out z-30 group border-r border-gray-200">
+    <div class="flex items-center justify-center h-20 border-b border-gray-200">
+    <h1 class="text-xl font-bold text-indigo-600 hidden group-hover:block whitespace-nowrap">MIND-TEXT2SQL</h1>
+    <i class='bx bx-brain text-3xl text-indigo-600 group-hover:hidden'></i>
+  </div>
+  <ul class="flex flex-col py-4">
+    <li>
+      <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-home"></i></span>
+        <span class="text-sm font-medium hidden group-hover:block whitespace-nowrap">Dashboard</span>
+      </a>
+    </li>
+    <%= render_nav_item('Datasources', datasources_path, 'bx bxs-data') %>
+    <li>
+      <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-drink"></i></span>
+        <span class="text-sm font-medium hidden group-hover:block whitespace-nowrap">Drink</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-shopping-bag"></i></span>
+        <span class="text-sm font-medium hidden group-hover:block whitespace-nowrap">Shopping</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-chat"></i></span>
+        <span class="text-sm font-medium hidden group-hover:block whitespace-nowrap">Chat</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-user"></i></span>
+        <span class="text-sm font-medium hidden group-hover:block whitespace-nowrap">Profile</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-bell"></i></span>
+        <span class="text-sm font-medium hidden group-hover:block whitespace-nowrap">Notifications</span>
+        <span class="ml-auto mr-6 text-sm bg-red-100 rounded-full px-3 py-px text-red-500 hidden group-hover:block">5</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-gray-500 hover:text-gray-800">
+        <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-gray-400"><i class="bx bx-log-out"></i></span>
+        <span class="text-sm font-medium hidden group-hover:block whitespace-nowrap">Logout</span>
+      </a>
+    </li>
+  </ul>
+</div>

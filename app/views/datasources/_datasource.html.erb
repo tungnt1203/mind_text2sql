@@ -1,0 +1,27 @@
+<div id="<%= dom_id(datasource) %>" class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition duration-300">
+    <div class="px-6 py-4">
+        <div class="flex items-center mb-2">
+        <i class='<%= database_icon(datasource.type_source) %> text-2xl mr-2'></i>
+        <h3 class="text-xl font-semibold text-gray-800"><%= datasource.description %></h3>
+        </div>
+        <p class="text-sm text-gray-600 mb-4"><%= datasource.type_source %></p>
+        <dl class="grid grid-cols-2 gap-x-4 gap-y-2">
+        <dt class="text-sm font-medium text-gray-500">Host:</dt>
+        <dd class="text-sm text-gray-700"><%= datasource.host %></dd>
+        <dt class="text-sm font-medium text-gray-500">Database:</dt>
+        <dd class="text-sm text-gray-700"><%= datasource.database %></dd>
+        <dt class="text-sm font-medium text-gray-500">Schema:</dt>
+        <dd class="text-sm text-gray-700"><%= datasource.schema %></dd>
+        <dt class="text-sm font-medium text-gray-500">Port:</dt>
+        <dd class="text-sm text-gray-700"><%= datasource.port %></dd>
+        </dl>
+    </div>
+    <div class="px-6 py-4 bg-gray-50 border-t border-gray-200 flex justify-end">
+        <%= link_to edit_datasource_path(datasource), class: "text-blue-600 hover:text-blue-800 mr-4", data: { turbo_frame: "modal", action: "click->modal#open" } do %>
+        <i class='bx bx-edit'></i>
+        <% end %>
+        <%= link_to datasource_path(datasource), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-red-600 hover:text-red-800" do %>
+        <i class='bx bx-trash'></i>
+        <% end %>
+    </div>
+</div>

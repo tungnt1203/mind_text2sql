@@ -1,0 +1,28 @@
+<% if flash.any? %>
+  <div id="flash-messages" class="fixed top-4 right-4 z-50 max-w-sm" data-controller="flash">
+    <% flash.each do |type, message| %>
+      <% flash_class = type.to_s == 'notice' ? 'bg-green-100 border-green-400 text-green-800' : 'bg-red-100 border-red-400 text-red-800' %>
+      <div class="<%= flash_class %> border-l-4 p-4 mb-4 rounded shadow-md transition-all duration-500 ease-in-out transform translate-x-0 opacity-100" role="alert">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <% if type.to_s == 'notice' %>
+              <svg class="h-6 w-6 text-green-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            <% else %>
+              <svg class="h-6 w-6 text-red-600 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            <% end %>
+            <p class="font-semibold"><%= message %></p>
+          </div>
+          <button data-action="click->flash#close" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

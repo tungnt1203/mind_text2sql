@@ -1,14 +1,14 @@
-import { Application } from "@hotwired/stimulus"
-import { registerControllers } from 'stimulus-vite-helpers'
+import { Application } from "@hotwired/stimulus";
+import { registerControllers } from "stimulus-vite-helpers";
 
-const application = Application.start()
+const application = Application.start();
 
 // Configure Stimulus development experience
-application.debug = false
-window.Stimulus = application
+application.debug = false;
+window.Stimulus = application;
 
-const controllers = import.meta.glob('./**/*_controller.js', { eager: true })
-registerControllers(application, controllers)
+const controllers = import.meta.glob("./**/*_controller.js", { eager: true });
+registerControllers(application, controllers);
 
 // Eager load all controllers defined in the import map under controllers/**/*_controller
 // import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
@@ -18,4 +18,4 @@ registerControllers(application, controllers)
 // import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
 // lazyLoadControllersFrom("controllers", application)
 
-export { application }
+export { application };
