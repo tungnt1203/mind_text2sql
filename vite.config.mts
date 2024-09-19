@@ -18,4 +18,18 @@ export default defineConfig({
       input: resolve(__dirname, "app/javascript/entrypoints/application.js"),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "boxicons/css/boxicons.min.css";`,
+      },
+    },
+  },
+  assetsInclude: [
+    "**/*.woff",
+    "**/*.woff2",
+    "**/*.ttf",
+    "**/*.eot",
+    "**/*.svg",
+  ],
 });

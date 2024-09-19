@@ -10,9 +10,9 @@
     <%= yield :head %>
 
     <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="<%= vite_asset_path 'images/brain-icon.svg' %>" type="image/png">
     <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="apple-touch-icon" type="image/png" href="<%= vite_asset_path 'images/brain-icon.svg' %>" />
     <%= vite_client_tag %>
     <%= vite_stylesheet_tag 'application', data: { "turbo-track": "reload" } %>
     <%= vite_javascript_tag 'application' %>
@@ -25,10 +25,18 @@
 
       Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
     -->
-
   </head>
 
   <body>
-    <%= yield %>
+      <div id="flash">
+        <%= render 'shared/flash' %>
+      </div>
+    <div class="min-h-screen flex flex-row bg-white">
+      <%= render partial: "shared/sidebar" %>
+      <div class="w-full flex-1 ml-16 p-8">
+        <%= render 'shared/modal' %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
