@@ -1,0 +1,38 @@
+<div class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600 mb-4">
+        SQL Powerhouse
+      </h1>
+      <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+        Elevate your database management with our comprehensive suite of SQL tools
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <%= render 'feature_category', title: 'Query Tools', features: [
+        { name: 'Optimize SQL', description: 'Boost query performance', icon: 'bx-rocket', link: sql_tools_optimize_path },
+        { name: 'Format SQL', description: 'Beautify your queries', icon: 'bx-palette', link: sql_tools_format_path },
+        { name: 'Fix Query', description: 'Resolve SQL errors', icon: 'bx-check-shield', link: sql_tools_fix_path },
+        { name: 'Visual Query Builder', description: 'Build SQL with drag-and-drop', icon: 'bx-grid', link: '#' },
+        { name: 'AI Query Suggestions', description: 'Get smart optimization tips', icon: 'bx-bulb', link: '#' }
+      ] %>
+
+      <%= render 'feature_category', title: 'Data Insights', features: [
+        { name: 'Text to SQL', description: 'Convert natural language to SQL', icon: 'bx-message-square-dots', link: sql_tools_text2sql_path },
+        { name: 'Explain SQL', description: 'Visualize query execution', icon: 'bx-info-circle', link: sql_tools_explain_path },
+        { name: 'Schema Visualizer', description: 'Create ER diagrams', icon: 'bx-network-chart', link: '#' },
+        { name: 'Performance Analytics', description: 'Analyze query efficiency', icon: 'bx-line-chart', link: '#' },
+        { name: 'Data Quality Checks', description: 'Automate data validation', icon: 'bx-check-double', link: '#' }
+      ] %>
+
+      <%= render 'feature_category', title: 'Collaboration & Learning', features: [
+        { name: 'Real-time Collaboration', description: 'Work together on queries', icon: 'bx-group', link: '#' },
+        { name: 'Version Control', description: 'Manage query versions', icon: 'bx-git-branch', link: '#' },
+        { name: 'SQL Learning Module', description: 'Interactive SQL lessons', icon: 'bx-book-open', link: '#' },
+        { name: 'Query Scheduling', description: 'Automate query execution', icon: 'bx-time', link: '#' },
+        { name: 'Custom Dashboards', description: 'Create visual reports', icon: 'bx-bar-chart-square', link: '#' }
+      ] %>
+    </div>
+  </div>
+</div>
