@@ -1,0 +1,33 @@
+<div class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600 mb-8">Text to SQL Converter</h1>
+
+    <%= form_with(url: sql_tools_text2sql_index_path, method: :post, local: true, class: "bg-white shadow-md rounded-lg p-6 space-y-6") do |f| %>
+      <div>
+        <%= f.label :datasource_id, "Select Datasource:", class: "block text-sm font-medium text-gray-700 mb-2" %>
+        <%= f.collection_select :datasource_id, @datasources, :id, :description, {}, class: "w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" %>
+      </div>
+
+      <div>
+        <%= f.label :schema, "Schema:", class: "block text-sm font-medium text-gray-700 mb-2" %>
+        <%= f.text_field :schema, class: "w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500", placeholder: "Enter schema name" %>
+      </div>
+
+      <div>
+        <%= f.label :user_input, "Enter your text:", class: "block text-sm font-medium text-gray-700 mb-2" %>
+        <%= f.text_area :user_input, rows: 5, class: "w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500", placeholder: "Describe your SQL query in natural language..." %>
+      </div>
+
+      <%= f.submit "Generate SQL", class: "w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out" %>
+    <% end %>
+
+    <% if @generated_sql %>
+      <div class="mt-8 bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-xl font-bold text-gray-800 mb-4">Generated SQL:</h2>
+        <div class="bg-gray-100 p-4 rounded-md">
+          <pre><code class="language-sql"><%= @generated_sql %></code></pre>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
