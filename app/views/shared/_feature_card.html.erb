@@ -1,0 +1,17 @@
+<div class="relative group h-full">
+  <div class="absolute -inset-0.5 bg-gradient-to-r from-indigo-600 to-pink-600 rounded-lg blur opacity-0 group-hover:opacity-10 transition duration-1000 group-hover:duration-200"></div>
+  <%= link_to link, class: "relative flex flex-col h-full bg-white ring-1 ring-gray-200 rounded-lg p-6 hover:shadow-md transition duration-300" do %>
+    <div class="flex items-center justify-between mb-4">
+      <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white">
+        <i class='bx <%= icon %> text-2xl'></i>
+      </div>
+      <div class="text-indigo-600 font-semibold flex items-center text-sm">
+        Explore
+        <i class='bx bx-right-arrow-alt ml-1 transform group-hover:translate-x-1 transition duration-300'></i>
+      </div>
+    </div>
+    <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition duration-300"><%= title %></h3>
+    <p class="text-sm text-gray-700 flex-grow"><%= description %></p>
+    <div class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+  <% end %>
+</div>

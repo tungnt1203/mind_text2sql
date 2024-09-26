@@ -14,4 +14,13 @@ Rails.application.routes.draw do
   resources :homes
   root "homes#index"
   resources :datasources
+  get "dashboard", to: "dashboard#index"
+
+  namespace :sql_tools do
+    get "optimize", to: "sql_tools#optimize"
+    get "format", to: "sql_tools#format"
+    get "fix", to: "sql_tools#fix"
+    get "text2sql", to: "sql_tools#text2sql"
+    get "explain", to: "sql_tools#explain"
+  end
 end

@@ -1,27 +1,37 @@
-<div id="<%= dom_id(datasource) %>" class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition duration-300">
-    <div class="px-6 py-4">
-        <div class="flex items-center mb-2">
-        <i class='<%= database_icon(datasource.type_source) %> text-2xl mr-2'></i>
-        <h3 class="text-xl font-semibold text-gray-800"><%= datasource.description %></h3>
-        </div>
-        <p class="text-sm text-gray-600 mb-4"><%= datasource.type_source %></p>
-        <dl class="grid grid-cols-2 gap-x-4 gap-y-2">
-        <dt class="text-sm font-medium text-gray-500">Host:</dt>
-        <dd class="text-sm text-gray-700"><%= datasource.host %></dd>
-        <dt class="text-sm font-medium text-gray-500">Database:</dt>
-        <dd class="text-sm text-gray-700"><%= datasource.database %></dd>
-        <dt class="text-sm font-medium text-gray-500">Schema:</dt>
-        <dd class="text-sm text-gray-700"><%= datasource.schema %></dd>
-        <dt class="text-sm font-medium text-gray-500">Port:</dt>
-        <dd class="text-sm text-gray-700"><%= datasource.port %></dd>
-        </dl>
+<div id="<%= dom_id(datasource) %>" class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 group">
+  <div class="p-6">
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center">
+        <i class='<%= database_icon(datasource.type_source) %> text-3xl text-indigo-600 mr-3'></i>
+        <h3 class="text-xl font-semibold text-gray-800 group-hover:text-indigo-600 transition duration-300"><%= datasource.description %></h3>
+      </div>
+      <span class="px-2 py-1 text-xs font-semibold text-indigo-600 bg-indigo-100 rounded-full"><%= datasource.type_source %></span>
     </div>
-    <div class="px-6 py-4 bg-gray-50 border-t border-gray-200 flex justify-end">
-        <%= link_to edit_datasource_path(datasource), class: "text-blue-600 hover:text-blue-800 mr-4", data: { turbo_frame: "modal", action: "click->modal#open" } do %>
-        <i class='bx bx-edit'></i>
-        <% end %>
-        <%= link_to datasource_path(datasource), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-red-600 hover:text-red-800" do %>
-        <i class='bx bx-trash'></i>
-        <% end %>
-    </div>
+    <dl class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+      <div class="col-span-1">
+        <dt class="font-medium text-gray-500">Host:</dt>
+        <dd class="text-gray-700"><%= datasource.host %></dd>
+      </div>
+      <div class="col-span-1">
+        <dt class="font-medium text-gray-500">Database:</dt>
+        <dd class="text-gray-700"><%= datasource.database %></dd>
+      </div>
+      <div class="col-span-1">
+        <dt class="font-medium text-gray-500">Schema:</dt>
+        <dd class="text-gray-700"><%= datasource.schema %></dd>
+      </div>
+      <div class="col-span-1">
+        <dt class="font-medium text-gray-500">Port:</dt>
+        <dd class="text-gray-700"><%= datasource.port %></dd>
+      </div>
+    </dl>
+  </div>
+  <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-end space-x-3">
+    <%= link_to edit_datasource_path(datasource), class: "text-indigo-600 hover:text-indigo-800 transition duration-300", data: { turbo_frame: "modal", action: "click->modal#open" } do %>
+      <i class='bx bx-edit text-xl'></i>
+    <% end %>
+    <%= link_to datasource_path(datasource), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this datasource?" }, class: "text-red-600 hover:text-red-800 transition duration-300" do %>
+      <i class='bx bx-trash text-xl'></i>
+    <% end %>
+  </div>
 </div>
